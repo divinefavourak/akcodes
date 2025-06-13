@@ -29,56 +29,49 @@ document.addEventListener('DOMContentLoaded', function() {
         if (loader) loader.style.display = 'none';
     });
 
-    // ===== Dark Mode Toggle ===== (Safe Implementation)
-    if (!document.querySelector('.dark-mode-toggle')) {
-        const darkToggle = document.createElement('div');
-        darkToggle.className = 'dark-mode-toggle';
-        darkToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    // ===== Dark Mode Toggle =====
+    const darkModeToggle = document.createElement('div');
+    darkModeToggle.className = 'dark-mode-toggle';
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    
+    if (document.body) {
+        document.body.appendChild(darkModeToggle);
         
-        if (document.body) {
-            document.body.appendChild(darkToggle);
-            
-            darkToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                const icon = darkToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-moon');
-                    icon.classList.toggle('fa-sun');
-                }
-            });
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
         }
+        
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+            }
+            // Save preference
+            localStorage.setItem('darkMode', 
+                document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        });
     }
-    // Save to localStorage
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-}
-// Update toggle click handler:
-darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-    });
-// ===== PROJECT FILTER ===== 
-    const filterButtons = document.querySelectorAll('.filter-btn'); // Add to projects.html buttons
-    const projectCards = document.querySelectorAll('.project-card'); // Add to project items
+
+    // ===== PROJECT FILTER ===== 
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
     if (filterButtons.length && projectCards.length) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
                 button.classList.add('active');
                 
                 const filterValue = button.dataset.filter;
                 
-                // Filter projects
                 projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.dataset.category === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (filterValue === 'all' || card.dataset.category === filterValue) 
+                        ? 'block' 
+                        : 'none';
                 });
             });
         });
