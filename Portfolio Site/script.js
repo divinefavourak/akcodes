@@ -15,3 +15,7 @@ window.addEventListener('scroll', () => {
   const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
   document.querySelector('.scroll-progress').style.width = scrollPercentage + '%';
 });
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hidden'); // Hides the loader after page fully loads
+});
