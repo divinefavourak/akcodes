@@ -48,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-});
-// Save to localStorage
+    // Save to localStorage
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
 }
@@ -57,4 +56,31 @@ if (localStorage.getItem('darkMode') === 'enabled') {
 darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+    });
+// ===== PROJECT FILTER ===== 
+    const filterButtons = document.querySelectorAll('.filter-btn'); // Add to projects.html buttons
+    const projectCards = document.querySelectorAll('.project-card'); // Add to project items
+
+    if (filterButtons.length && projectCards.length) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.dataset.filter;
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.dataset.category === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 });
