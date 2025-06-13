@@ -871,11 +871,29 @@ body {
         font-size: 2.5rem;
     }
 }
+/* Dark Mode Styles */
 .dark-mode {
-  --dark-color: #f5f6fa;
-  --light-color: #2d3436;
-  background-color: var(--light-color);
-  color: var(--dark-color);
+    --dark-color: #f5f6fa;
+    --light-color: #2d3436;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 .loader {
   position: fixed;
