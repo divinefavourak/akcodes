@@ -7,6 +7,26 @@ darkModeToggle.addEventListener('click', () => {
   icon.classList.toggle('fa-moon');
   icon.classList.toggle('fa-sun');
 });
+// Only run if dark mode toggle elements exist
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.createElement('div');
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    darkModeToggle.classList.add('dark-mode-toggle');
+    
+    // Check if body exists before appending
+    if (document.body) {
+        document.body.appendChild(darkModeToggle);
+        
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+            }
+        });
+    }
+});
 document.body.appendChild(darkModeToggle); 
 window.addEventListener('scroll', () => {
   const scrollTop = document.documentElement.scrollTop;
