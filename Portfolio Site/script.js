@@ -19,3 +19,62 @@ window.addEventListener('load', function() {
     const loader = document.querySelector('.loader');
     loader.classList.add('hidden'); // Hides the loader after page fully loads
 });
+// Loader timeout (force hide after 3s even if page isn't fully loaded)
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const loader = document.querySelector('.loader');
+        if (loader) loader.style.display = 'none';
+    }, 3000);
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // ===== Mobile Navigation Toggle =====
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.add('active');
+        });
+    }
+    
+    if (navClose) {
+        navClose.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    }
+    
+    // Close menu when clicking on links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // ===== Loading Animation =====
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const loader = document.querySelector('.loader');
+            if (loader) loader.style.display = 'none';
+        }, 1000);
+    });
+
+    // ===== Project Filtering ===== (if you have projects page)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const filterValue = button.dataset.filter;
+            
+            projectCards.forEach(card => {
+                card.style.display = (filterValue === 'all' || card.dataset.category === filterValue) 
+                    ? 'block' 
+                    : 'none';
+            });
+        });
+    });
+});
