@@ -49,3 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+// Save to localStorage
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+}
+// Update toggle click handler:
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+});
