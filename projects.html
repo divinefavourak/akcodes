@@ -15,18 +15,20 @@
             <div class="nav-logo">
                 <a href="index.html" class="logo">Port<span>folio</span></a>
             </div>
+            <!-- Mobile nav toggle using checkbox hack -->
+            <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" hidden>
             <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html" class="active">Projects</a>
                 <a href="contact.html">Contact</a>
-                <div class="nav-close" id="nav-close">
+                <label for="nav-toggle-checkbox" class="nav-close" id="nav-close">
                     <i class="fas fa-times"></i>
-                </div>
+                </label>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
+            <label for="nav-toggle-checkbox" class="nav-toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
-            </div>
+            </label>
         </nav>
 
         <!-- Projects Page Content -->
@@ -35,10 +37,10 @@
             <p class="page-subtitle">Here are some of my recent works</p>
             
             <div class="project-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="app">Mobile App</button>
-                <button class="filter-btn" data-filter="ui">UI/UX</button>
+                <button class="filter-btn active" data-filter="all" tabindex="0">All</button>
+                <button class="filter-btn" data-filter="web" tabindex="0">Web Design</button>
+                <button class="filter-btn" data-filter="app" tabindex="0">Mobile App</button>
+                <button class="filter-btn" data-filter="ui" tabindex="0">UI/UX</button>
             </div>
             
             <div class="project-grid">
@@ -121,7 +123,5 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
