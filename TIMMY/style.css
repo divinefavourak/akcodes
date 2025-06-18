@@ -1,0 +1,220 @@
+:root {
+      --primary: #4caf50;
+      --secondary: #a5d6a7;
+      --accent: #ffc107;
+      --bg: #ffffff;
+      --text: #263238;
+    }
+    body.dark-mode {
+      --bg: #121212;
+      --text: #f1f1f1;
+      --primary: #81c784;
+      --accent: #ffd54f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.4s, color 0.4s;
+    }
+    .container { width: 90%; max-width: 1000px; margin: auto; padding: 4rem 0; }
+    .loader-wrapper {
+      position: fixed; width: 100%; height: 100%; background: var(--bg);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999; 
+      animation: fadeOut 1s 2s forwards;
+      pointer-events: auto;
+    }
+    .loader {
+      width: 50px; height: 50px;
+      border: 5px solid var(--primary); border-top: 5px solid transparent;
+      border-radius: 50%; animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+    /* Hide loader after animation */
+.loader-wrapper[style*="opacity: 0"] {
+  pointer-events: none;
+  z-index: -1;
+}
+    .navbar {
+      background: var(--bg);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: 60px;
+    }
+    .nav-container {
+      max-width: 1000px; margin: auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-links { 
+      list-style: none; display: flex; gap: 1.5rem; 
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text); font-weight: bold; transition: 0.3s ease;
+      background: transparent;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary); border-bottom: 2px solid var(--primary);
+    }
+    @media (max-width: 768px) {
+      .nav-links { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .nav-container { flex-direction: column; align-items: flex-start; }
+    }
+    .toggle-mode {
+      cursor: pointer; background: var(--accent); border: none;
+      padding: 0.5rem 1rem; border-radius: 5px; font-weight: bold; color: #000;
+    }
+    header.hero {
+      background: var(--primary); color: white; padding: 6rem 0; text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+    header.hero h1 span { color: var(--accent); }
+    /* Add margin to the button in the hero section */
+header.hero .btn {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+/* Reduce container padding inside hero to avoid extra space */
+header.hero .container {
+  padding: 0;
+}
+    .btn {
+      background: var(--accent); color: #000; padding: 0.8rem 1.5rem;
+      border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s ease;
+    }
+    .btn:hover { background: #e6b806; }
+    .projects .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem; margin-top: 2rem;
+    }
+    .card {
+      padding: 2rem; background: white; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;
+    }
+    .card:hover { transform: scale(1.05); }
+    footer { text-align: center; padding: 2rem 0; background: #eee; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* ...existing code... */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--bg);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    z-index: 100;
+  }
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+  .nav-container {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+ /* ...existing code... */
+
+.contact form {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(67, 97, 238, 0.08), 0 1.5px 6px rgba(58, 12, 163, 0.04);
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact form input,
+.contact form textarea {
+  padding: 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f8f9fa;
+  transition: border 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border: 1.5px solid #4361ee;
+  outline: none;
+  box-shadow: 0 0 0 2px #4361ee22;
+}
+
+.contact form button.btn {
+  background: linear-gradient(90deg, #4361ee 60%, #3a0ca3 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact form button.btn:hover {
+  background: linear-gradient(90deg, #3a0ca3 60%, #4361ee 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .contact form {
+    padding: 1.2rem 0.5rem;
+    max-width: 100%;
+  }
+  .contact form button.btn {
+    font-size: 1rem;
+    padding: 0.8rem 0;
+  }
+  .contact h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #4361ee;
+  letter-spacing: 1px;
+}
+}

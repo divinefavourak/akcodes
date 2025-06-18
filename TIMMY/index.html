@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Piece Crew</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader-wrapper"><div class="loader"></div></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">Timmy</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">☰</label>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#projects">Crew</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
+    </div>
+  </nav>
+
+  <header class="hero" style="background: linear-gradient(120deg, #0093E9 0%, #80D0C7 100%);">
+    <div class="container">
+      <h1>Welcome to <span>Timmy's Straw Hat Crew</span></h1>
+      <p>Set sail with Luffy and friends on the adventure of a lifetime!</p>
+      <a href="#projects" class="btn">Meet the Crew</a>
+    </div>
+  </header>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Straw Hat Pirates</h2>
+      <div class="grid">
+        <div class="card">
+          <a href="https://onepiece.fandom.com/wiki/Monkey_D._Luffy" target="_blank">
+            <img src="one-piece-luffy-inherit-the-will-of-d-on-manga-pages.avif" alt="Luffy" style="width:100%;border-radius:8px;">
+          </a>
+          <h3>Monkey D. Luffy</h3>
+          <p>Captain of the Straw Hat Pirates. Aspires to be the Pirate King.</p>
+        </div>
+        <div class="card">
+          <a href="https://onepiece.fandom.com/wiki/Roronoa_Zoro" target="_blank">
+            <img src="zoro-using-three-swords-in-one-piece.avif" alt="Zoro" style="width:100%;border-radius:8px;">
+          </a>
+          <h3>Roronoa Zoro</h3>
+          <p>The swordsman of the crew. Dreams of becoming the world's greatest swordsman.</p>
+        </div>
+        <div class="card">
+          <a href="https://onepiece.fandom.com/wiki/Nami" target="_blank">
+            <img src="Nami_Anime_Post_Timeskip_Infobox.webp" alt="Nami" style="width:100%;border-radius:8px;">
+          </a>
+          <h3>Nami</h3>
+          <p>The navigator. Loves maps, weather, and treasure!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 One Piece Fan Page — All Rights Reserved</p>
+  </footer>
+</body>
+</html>

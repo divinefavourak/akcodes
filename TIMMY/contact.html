@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timmy's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <div class="loader-wrapper"><div class="loader"></div></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">Timmy</h1>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Hi, I'm <span>Timmy</span></h1>
+      <p>Straw Hat Pirate | Nakama Hunter | King of the One Piece Fandom</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </header>
+
+  
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xwpbqogl" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </section>
+    
+    <div class="container">
+      <h2>One Piece Crew</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="one-piece-luffy-inherit-the-will-of-d-on-manga-pages.avif" alt="Luffy" style="width:100%;border-radius:8px;">
+          <h3>Monkey D. Luffy</h3>
+          <p>Captain of the Straw Hat Pirates. Aspires to be the Pirate King.</p>
+        </div>
+        <div class="card">
+          <img src="zoro-using-three-swords-in-one-piece.avif" alt="Zoro" style="width:100%;border-radius:8px;">
+          <h3>Roronoa Zoro</h3>
+          <p>Swordsman of the crew. Dreams of becoming the world's greatest swordsman.</p>
+        </div>
+        <div class="card">
+          <img src="Nami_Anime_Post_Timeskip_Infobox.webp" alt="Nami" style="width:100%;border-radius:8px;">
+          <h3>Nami</h3>
+          <p>Navigator of the Straw Hat Pirates. Loves maps and treasure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Timmy is HIM — All Rights Reserved</p>
+  </footer>
+</body>
+</html>
