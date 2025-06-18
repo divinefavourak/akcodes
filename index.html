@@ -18,60 +18,67 @@
 </script>
 
 </head>
+<body>
+   
+<!-- Loader (CSS-only, will fade out after 2s using animation) -->
 <div class="loader">
   <div class="loader-spinner"></div>
 </div>
-<body>
-   
+
+<!-- Scroll Progress Bar (CSS-only, static or removed if not feasible) -->
 <div class="scroll-progress"></div> 
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="nav">
-            <div class="nav-logo">
-                <a href="index.html" class="logo">Port<span>folio</span></a>
-            </div>
-            <div class="nav-links" id="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-                <div class="nav-close" id="nav-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
 
-        <!-- Landing Page Content -->
-        <main class="landing">
-            <div class="landing-content">
-                <h1 class="animated-text">Hi, I'm <span>Divine</span></h1>
-                <h2 class="animated-subtext">Frontend Developer & UI Designer</h2>
-                <p class="animated-paragraph">I create beautiful, responsive websites with engaging user experiences.</p>
-                <div class="btn-group">
-                    <a href="projects.html" class="btn btn-primary">View My Work</a>
-                    <a href="contact.html" class="btn btn-secondary">Hire Me</a>
-                </div>
-            </div>
-            <div class="landing-image">
-                <div class="image-wrapper">
-                    <img src="IMG-20250102-WA0000.jpg" alt="Profile Image">
-                    <div class="color-spot spot-1"></div>
-                    <div class="color-spot spot-2"></div>
-                    <div class="color-spot spot-3"></div>
-                </div>
-            </div>
-        </main>
+<div class="container">
+    <!-- Navigation (CSS-only mobile menu using checkbox hack) -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="index.html" class="logo">Port<span>folio</span></a>
+        </div>
+        <!-- Mobile nav toggle using checkbox hack -->
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" hidden>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <label for="nav-toggle-checkbox" class="nav-close" id="nav-close">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+        <label for="nav-toggle-checkbox" class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </label>
+    </nav>
 
-        <!-- Floating Shapes for Background -->
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-    </div>
+    <!-- Landing Page Content -->
+    <main class="landing">
+        <div class="landing-content">
+            <h1 class="animated-text">Hi, I'm <span>Divine</span></h1>
+            <h2 class="animated-subtext">Frontend Developer & UI Designer</h2>
+            <p class="animated-paragraph">I create beautiful, responsive websites with engaging user experiences.</p>
+            <div class="btn-group">
+                <a href="projects.html" class="btn btn-primary">View My Work</a>
+                <a href="contact.html" class="btn btn-secondary">Hire Me</a>
+            </div>
+        </div>
+        <div class="landing-image">
+            <div class="image-wrapper">
+                <img src="IMG-20250102-WA0000.jpg" alt="Profile Image">
+                <div class="color-spot spot-1"></div>
+                <div class="color-spot spot-2"></div>
+                <div class="color-spot spot-3"></div>
+            </div>
+        </div>
+    </main>
 
-    <script src="script.js"></script>
+    <!-- Floating Shapes for Background -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+</div>
+
+<!-- Removed all JS scripts -->
+
 </body>
 </html>
